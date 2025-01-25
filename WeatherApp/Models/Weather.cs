@@ -8,6 +8,10 @@ namespace WeatherApp.Models
 {
     public class Weather
     {
-        public string Description { get; set; } // Weather description
+
+        public int id { get; set; }
+        public string main { get; set; }
+        public string description { get; set; }
+        public string icon { get; set; }
     }
 }

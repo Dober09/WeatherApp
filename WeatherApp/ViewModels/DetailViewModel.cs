@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeatherApp.Models
+namespace WeatherApp.ViewModels
 {
-    public class WindData
+    public class DetailViewModel
     {
-        public double speed { get; set; }
-        public int deg { get; set; }
     }
 }

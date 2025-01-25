@@ -1,0 +1,136 @@
+[
+  {
+    "coord": {
+      "lon": 29.0097,
+      "lat": -24.1944
+    },
+    "weather": [
+      {
+        "id": 800,
+        "main": "Clear",
+        "description": "clear sky",
+        "icon": "01d"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 302.09,
+      "feels_like": 301.53,
+      "temp_min": 302.09,
+      "temp_max": 302.09,
+      "pressure": 1010,
+      "humidity": 38,
+      "sea_level": 1010,
+      "grnd_level": 892
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 1.7,
+      "deg": 124,
+      "gust": 2.13
+    },
+    "clouds": {
+      "all": 4
+    },
+    "dt": 1737819158,
+    "sys": {
+      "country": "ZA",
+      "sunrise": 1737776206,
+      "sunset": 1737824131
+    },
+    "timezone": 7200,
+    "id": 964315,
+    "name": "Mokopane",
+    "cod": 200
+  },
+  {
+    "coord": {
+      "lon": 29.4688,
+      "lat": -23.9045
+    },
+    "weather": [
+      {
+        "id": 802,
+        "main": "Clouds",
+        "description": "scattered clouds",
+        "icon": "03d"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 298.38,
+      "feels_like": 298.03,
+      "temp_min": 298.38,
+      "temp_max": 298.38,
+      "pressure": 1011,
+      "humidity": 41,
+      "sea_level": 1011,
+      "grnd_level": 872
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 6.78,
+      "deg": 83,
+      "gust": 9.32
+    },
+    "clouds": {
+      "all": 35
+    },
+    "dt": 1737823162,
+    "sys": {
+      "country": "ZA",
+      "sunrise": 1737776125,
+      "sunset": 1737823991
+    },
+    "timezone": 7200,
+    "id": 965289,
+    "name": "Polokwane",
+    "cod": 200
+  },
+  {
+    "coord": {
+      "lon": 28.1878,
+      "lat": -25.7449
+    },
+    "weather": [
+      {
+        "id": 800,
+        "main": "Clear",
+        "description": "clear sky",
+        "icon": "01d"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 302.29,
+      "feels_like": 301.9,
+      "temp_min": 301.25,
+      "temp_max": 302.55,
+      "pressure": 1009,
+      "humidity": 40,
+      "sea_level": 1009,
+      "grnd_level": 869
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 3.09,
+      "deg": 90
+    },
+    "clouds": {
+      "all": 0
+    },
+    "dt": 1737823260,
+    "sys": {
+      "type": 1,
+      "id": 2001,
+      "country": "ZA",
+      "sunrise": 1737776243,
+      "sunset": 1737824489
+    },
+    "timezone": 7200,
+    "id": 964137,
+    "name": "Pretoria",
+    "cod": 200
+  }
+
+]
