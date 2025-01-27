@@ -22,6 +22,8 @@ namespace WeatherApp
             builder.Services.AddSingleton<DataServices>();
 
             builder.Services.AddSingleton<HomeViewModel>();
+            builder.Services.AddSingleton<HomeViewModel>();
+
             builder.Services.AddSingleton<HomePage>();
 
 #if DEBUG

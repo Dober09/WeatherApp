@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using WeatherApp.Models;
+
+
+
 
 namespace WeatherApp.ViewModels
 {
-    public class DetailViewModel
+
+    [QueryProperty(nameof(WeatherData),"WeatherData")]
+    public partial class DetailViewModel: BaseViewModel
     {
+        [ObservableProperty]
+        WeatherData weatherData;
+
+
     }
 }

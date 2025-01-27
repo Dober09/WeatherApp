@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using WeatherApp.Models;
 using WeatherApp.Services;
+using WeatherApp.Views;
 
 namespace WeatherApp.ViewModels
 {
@@ -28,7 +29,18 @@ namespace WeatherApp.ViewModels
             GetWeatherDataAsync();
         }
 
-      
+
+
+        [RelayCommand]
+        async Task GoToDetailAsync(WeatherData weatherdata)
+        {
+            if (weatherdata is null) {
+                return;
+            }
+
+            await Shell.Current.GoToAsync($"{nameof(DetailPage)}", new Dictionary<string, object> { { "WeatherData", weatherdata } });
+
+        }
 
 
 

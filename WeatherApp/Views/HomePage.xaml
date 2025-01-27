@@ -6,12 +6,9 @@
              xmlns:model ="clr-namespace:WeatherApp.Models"
              x:DataType="vm:HomeViewModel"
              Title="{Binding Title}">
-    
+
     <VerticalStackLayout>
-
-                       
-
-      
+     
 
         <CollectionView ItemsSource="{Binding WeatherDataList}">
             <CollectionView.ItemTemplate >
@@ -22,24 +19,21 @@
                             WidthRequest="330"
                             Padding="10"
                             Margin="0,10"
-                            > 
-
-                        <Border.Shadow>
-                            <Shadow Brush="Black"
-                                    Offset="20,20"
-                                    Radius="40"
-                                    Opacity=".8"/>
-                        </Border.Shadow>
-
+                            >
+            
                         <FlexLayout JustifyContent="SpaceBetween" >
                             <VerticalStackLayout Spacing="10">
 
                                 <Label Text="{Binding name}"  FontAttributes="Bold" FontSize="19"/>
                                 <Label Text="{Binding weather[0].description}"  />
                                 <Label Text="{Binding  main.TempCelsius ,StringFormat='{}{0:N2}°C'}" FontSize="20"/>
+                                <Button Text="More" 
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:HomeViewModel}}, Path=GoToDetailsCommand}"
+                                        CommandParameter="{Binding .}"/>
 
                             </VerticalStackLayout>
                             <Image Source="{Binding IconUrl}"  WidthRequest="100" />
+                            
                         </FlexLayout>
                     </Border>
                 </DataTemplate>
