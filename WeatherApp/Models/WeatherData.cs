@@ -19,6 +19,8 @@ namespace WeatherApp.Models
         public int id { get; set; }
         public string name { get; set; }
         public int cod { get; set; }
+
+        public string IconUrl => $"https://openweathermap.org/img/wn/{weather[0].icon}@4x.png";
     }
 
     [JsonSerializable(typeof(List<WeatherData>))]

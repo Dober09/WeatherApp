@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
-
+using WeatherApp.Services;
+using WeatherApp.ViewModels;
+using WeatherApp.Views;
 namespace WeatherApp
 {
     public static class MauiProgram
@@ -14,6 +16,13 @@ namespace WeatherApp
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+            builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
+            builder.Services.AddSingleton<IGeolocation>(Geolocation.Default);
+
+            builder.Services.AddSingleton<DataServices>();
+
+            builder.Services.AddSingleton<HomeViewModel>();
+            builder.Services.AddSingleton<HomePage>();
 
 #if DEBUG
     		builder.Logging.AddDebug();

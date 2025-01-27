@@ -14,6 +14,8 @@ namespace WeatherApp.Models
         public double temp_max { get; set; }
         public int pressure { get; set; }
         public int humidity { get; set; }
-      
+
+        // Convert temperature from Kelvin to Celsius
+        public double TempCelsius => temp - 273.15;
     }
 }
