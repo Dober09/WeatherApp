@@ -5,13 +5,33 @@
              xmlns:vm="clr-namespace:WeatherApp.ViewModels"
              xmlns:model="clr-namespace:WeatherApp.Models"
              x:DataType="vm:HomeViewModel"
+             Shell.NavBarIsVisible="False"
              BackgroundColor="#1a73e8"
-             Title="{Binding Title}">
+             >
 
     <Grid RowDefinitions="Auto,*">
         <!-- Search bar could be added here in Row 0 -->
 
+        <HorizontalStackLayout Grid.Row="0"  Spacing="70" Margin="10" >
+            
+        <Label Text="{Binding Title}"
+               FontAttributes="Bold"
+               TextColor="AliceBlue"
+               
+               FontSize="30"/>
+
+            <ImageButton Source="search.png"
+                          WidthRequest="20"
+                          HeightRequest="20"
+                          Command="{Binding SearchPlaceCommand}" />
+
+
+
+        </HorizontalStackLayout>
+
         <ScrollView Grid.Row="1">
+
+            
             <CollectionView ItemsSource="{Binding WeatherDataList}"
                           Margin="16,8">
                 <CollectionView.ItemTemplate>

@@ -42,6 +42,22 @@ namespace WeatherApp.ViewModels
 
         }
 
+        [RelayCommand]
+        async Task SearchPlaceAsync()
+        {
+            string message = await Shell.Current.DisplayPromptAsync("search", "", "ok", "cancel", "Enter City");
+           var weatherData =  await dataServices.LoadJsonDataAsync(message);
+            Debug.WriteLine(message);
+            //Debug.WriteLine($"Weather data {weatherData}");
+            if (WeatherDataList.Count != 0)
+                WeatherDataList.Clear();
+
+
+
+            foreach (var weather in weatherData)
+                WeatherDataList.Add(weather);
+
+        }
 
 
         private async Task GetWeatherDataAsync()

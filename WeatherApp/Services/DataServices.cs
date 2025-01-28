@@ -48,6 +48,20 @@ namespace WeatherApp.Services
 
         }
 
+        public async Task<List<WeatherData>> LoadJsonDataAsync(string city)
+        {
+            string BaseUrl = "https://api.openweathermap.org/data/2.5/weather";
+            string url = $"{BaseUrl}?q={city}&appid={apiKey}";
 
+            var response = await httpClient.GetAsync(url);
+            if (response.IsSuccessStatusCode)
+            { // Create a list with single weather data since API returns single object
+                var weatherData = await response.Content.ReadFromJsonAsync<WeatherData>();
+                weatherDataList = new List<WeatherData> { weatherData};
+
+            }
+            return weatherDataList;
+
+        }
     }
 }
