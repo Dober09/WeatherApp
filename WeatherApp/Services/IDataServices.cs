@@ -5,5 +5,6 @@ namespace WeatherApp.Services
     public interface IDataServices
     {
         Task<List<WeatherData>> LoadJsonDataAsync(double lon , double lat);
+        
     }
 }

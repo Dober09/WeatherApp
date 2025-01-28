@@ -3,15 +3,67 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApp.Views.DetailPage"
              xmlns:view="clr-namespace:WeatherApp.Views"
-             xmlns:model="clr-namespace:WeatherApp.Models"
-             x:DataType="model:WeatherData"
-               Title="{Binding name}"
-             >
-    
-    <VerticalStackLayout>
-        <Label 
-            Text="{Binding wind}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="{Binding WeatherData.name}"
+             BackgroundColor="#f0f2f5">
+
+    <ScrollView>
+        <Grid RowSpacing="20" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Weather Description -->
+            <Frame Grid.Row="0" 
+                   BackgroundColor="White"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="20">
+                <Label Text="{Binding WeatherData.weather[0].description}"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="#2d3436"
+                       HorizontalOptions="Center"
+                       TextTransform="Uppercase"/>
+            </Frame>
+
+            <!-- Weather Icon -->
+            <Frame Grid.Row="1"
+                   BackgroundColor="White"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   HeightRequest="180"
+                   WidthRequest="180"
+                   HorizontalOptions="Center"
+                   Padding="15">
+                <Image Source="{Binding WeatherData.IconUrl}"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Frame>
+
+            <!-- Weather Details -->
+            <Frame Grid.Row="2"
+                   BackgroundColor="White"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="20">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="{Binding WeatherData.weather[0].main, StringFormat='Weather: {0}'}"
+                           TextColor="#2d3436"
+                           FontSize="16"/>
+                    <Label Text="{Binding WeatherData.visibility, StringFormat='Visibility: {0}m'}"
+                           TextColor="#2d3436"
+                           FontSize="16"/>
+                    <Label Text="{Binding WeatherData.wind.speed, StringFormat='Wind Speed: {0} m/s'}"
+                           TextColor="#2d3436"
+                           FontSize="16"/>
+                    <Label Text="{Binding WeatherData.main.humidity, StringFormat='Humidity: {0}%'}"
+                           TextColor="#2d3436"
+                           FontSize="16"/>
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </ScrollView>
 </ContentPage>

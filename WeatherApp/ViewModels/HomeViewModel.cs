@@ -56,6 +56,7 @@ namespace WeatherApp.ViewModels
 
                 if (location is not null)
                 {
+                    Debug.WriteLine("");
                     location = await geolocation.GetLocationAsync(new GeolocationRequest
                     {
                         DesiredAccuracy = GeolocationAccuracy.Medium,
